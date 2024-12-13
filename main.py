@@ -1,16 +1,9 @@
 import pygame
 import sys
-<<<<<<< HEAD
 import tkinter as tk
 from tkinter import filedialog
 from genetic_algorithm import genetic_algorithm  # Import the custom genetic algorithm module
 
-=======
-from genetic_algorithm import genetic_algorithm # Import the custom genetic algorithm module
-
-
-IMAGE_PATH = "assets/puzzle_image.jpg" # Path to the puzzle image
->>>>>>> edf2f21a109bb22c128614a6bcc4ba981d092167
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (50, 50, 50)
@@ -52,14 +45,11 @@ def choose_image():
     root.withdraw()  # Hide the tkinter root window
     file_path = filedialog.askopenfilename(title="Select an image", filetypes=[("Image Files", "*.png;*.jpg;*.jpeg;*.bmp;*.gif")])
     
-<<<<<<< HEAD
     if file_path:
         return file_path
     else:
         return None
 
-=======
->>>>>>> edf2f21a109bb22c128614a6bcc4ba981d092167
 # Draw the puzzle pieces and display fitness information
 def draw_puzzle(screen, pieces, generation, fitness):
     screen.fill(BLACK) 
@@ -80,10 +70,6 @@ def draw_gradient_background(screen, color1, color2):
         g = int(color1[1] * (1 - blend) + color2[1] * blend)
         b = int(color1[2] * (1 - blend) + color2[2] * blend)
         pygame.draw.line(screen, (r, g, b), (0, i), (IMAGE_SIZE[0], i))
-<<<<<<< HEAD
-=======
-        
->>>>>>> edf2f21a109bb22c128614a6bcc4ba981d092167
 
 # Dynamically adjust font size to fit within a given width
 def adjust_font_size_to_fit(text, max_width, font_name="Arial", max_font_size=24, color=WHITE):
@@ -117,10 +103,6 @@ def draw_header(screen, generation, fitness, status):
     screen.blit(fit_surface, (170, 10))  
     screen.blit(status_surface, (330, 10))  
 
-<<<<<<< HEAD
-=======
-
->>>>>>> edf2f21a109bb22c128614a6bcc4ba981d092167
 # Draw a button with hover effects
 def draw_button(screen, text, rect, color, hover_color, text_color, border_radius=10):
     mouse_pos = pygame.mouse.get_pos()
@@ -180,7 +162,6 @@ def main_menu():
 def main():
     global GRID_SIZE
     GRID_SIZE = main_menu() # Get grid size from menu
-<<<<<<< HEAD
 
     # Let the user upload an image
     IMAGE_PATH = choose_image()  # Get the image path from file dialog
@@ -188,8 +169,6 @@ def main():
         print("No image selected. Exiting...")
         pygame.quit()
         sys.exit()
-=======
->>>>>>> edf2f21a109bb22c128614a6bcc4ba981d092167
 
     global IMAGE_SIZE
     IMAGE_SIZE = (400 + GRID_SIZE * 50, 400 + GRID_SIZE * 50)  # Adjust image size based on grid size
